@@ -6,7 +6,7 @@
 		<artifactId>personslist-repo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>personslist-repo-model-jpa</artifactId>
+	<artifactId>metafle-model-jpa</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>

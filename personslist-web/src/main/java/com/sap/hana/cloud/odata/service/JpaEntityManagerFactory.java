@@ -15,7 +15,7 @@ import org.eclipse.persistence.config.PersistenceUnitProperties;
  */
 public class JpaEntityManagerFactory {
 	public static final String DATA_SOURCE_NAME = "java:comp/env/jdbc/DefaultDB";
-	public static final String PERSISTENCE_UNIT_NAME = "personslist-repo-model-jpa";
+	public static final String PERSISTENCE_UNIT_NAME = "metafle-model-jpa";
 	private static EntityManagerFactory entityManagerFactory = null;
 
 	/**

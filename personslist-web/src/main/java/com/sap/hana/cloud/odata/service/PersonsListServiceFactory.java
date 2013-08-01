@@ -9,7 +9,7 @@ import com.sap.core.odata.processor.api.jpa.exception.ODataJPARuntimeException;
  * Odata JPA Processor implementation class
  */
 public class PersonsListServiceFactory extends ODataJPAServiceFactory {
-	private static final String PERSISTENCE_UNIT_NAME = "personslist-repo-model-jpa";
+	private static final String PERSISTENCE_UNIT_NAME = "metafle-model-jpa";
 
 	@Override
 	public ODataJPAContext initializeODataJPAContext()

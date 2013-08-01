@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.sap.hana.cloud.sample</groupId>
-			<artifactId>personslist-repo-model-jpa</artifactId>
+			<artifactId>metafle-model-jpa</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- SAP OData dependencies -->
