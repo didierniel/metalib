@@ -6,12 +6,20 @@ sap.ui.jsview("personslist-web.personslist", {
 
 	createContent : function(oController) {
 		// Create an instance of the table control
+		
+		var oPanel = new sap.ui.commons.Panel();
+		var oText =new sap.ui.commons.TextView({text:"Here comes the content..."});
+		oPanel.addContent(oText);
+		
 		var oTable = new sap.ui.table.Table({
-			title : "Persons List",
+			title : "Metalib-2013-08-02-15:55",
 			visibleRowCount : 7,
 			firstVisibleRow : 3,
 			selectionMode : sap.ui.table.SelectionMode.Single,
 		});
+		oPanel.addContent(oTable);
+		
+
 		// toolbar
 		var oTableToolbar = new sap.ui.commons.Toolbar();
 		// first name field
@@ -73,6 +81,6 @@ sap.ui.jsview("personslist-web.personslist", {
 		}));
 		// bind table rows to /Persons based on the model defined in the init method of the controller
 		oTable.bindRows("/Persons");
-		return oTable;
+		return oPanel;
 	}
 });
