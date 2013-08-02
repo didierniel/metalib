@@ -4,7 +4,7 @@
 
 	<parent>
 		<groupId>com.sap.hana.cloud.sample</groupId>
-		<artifactId>personslist-repo</artifactId>
+		<artifactId>metalib</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
