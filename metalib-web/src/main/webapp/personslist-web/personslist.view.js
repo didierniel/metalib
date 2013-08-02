@@ -10,25 +10,48 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oLayout = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix2",
 			layoutFixed : true,
-			columns : 2,
+			columns : 1,
 			width : "100%",
 			widths : [ "20%", "80%" ]
 			});
+
+		var oLayoutHeader = new sap.ui.commons.layout.MatrixLayout({
+			id : "matrix-header",
+			layoutFixed : true,
+			columns : 3,
+			width : "100%",
+			widths : [ "20%","60%", "20%" ]
+			});
+
+		var oLayoutBody = new sap.ui.commons.layout.MatrixLayout({
+			id : "matrix-body",
+			layoutFixed : true,
+			columns : 2,
+			width : "100%",
+			widths : [ "20%","80%" ]
+			});
+
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
-		var oText2 =new sap.ui.commons.TextView({text:"Profile"});
+		var oText2 =new sap.ui.commons.TextView({text:"Title"});
+
+		var oText3 =new sap.ui.commons.TextView({text:"Profile"});
 		
-		oLayout.createRow( oText1, oText2 ); 
+		oLayoutHeader.createRow( oText1, oText2,oText3 ); 
+
+		oLayout.createRow( oLayoutHeader ); 
 		
 		var oText =new sap.ui.commons.TextView({text:"Tree"});
 		
 		var oTable = new sap.ui.table.Table({
-			title : "Metalib-2013-08-02-17:04",
+			title : "Metalib-2013-08-02-17:49",
 			visibleRowCount : 7,
 			firstVisibleRow : 3,
 			selectionMode : sap.ui.table.SelectionMode.Single,
 		});
-		oLayout.createRow( oText, oTable ); 
+		oLayoutBody.createRow( oText, oTable ); 
+
+		oLayout.createRow( oLayoutBody ); 
 		
 
 		// toolbar
