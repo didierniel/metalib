@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>personslist-repo-web</artifactId>
+	<artifactId>metalib-web</artifactId>
 	<packaging>war</packaging>
 
 	<dependencies>

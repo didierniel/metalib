@@ -3,7 +3,7 @@ sap.ui.controller("personslist-web.personslist", {
 	onInit : function() {
 		var sOrigin = window.location.protocol + "//" + window.location.hostname
 				+ (window.location.port ? ":" + window.location.port : "");
-		var personsListOdataServiceUrl = sOrigin + "/personslist-repo-web/personslist.svc";
+		var personsListOdataServiceUrl = sOrigin + "/metalib-web/personslist.svc";
 
 		var odataModel = new sap.ui.model.odata.ODataModel(
 				personsListOdataServiceUrl);
