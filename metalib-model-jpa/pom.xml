@@ -6,7 +6,7 @@
 		<artifactId>metalib</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>metafle-model-jpa</artifactId>
+	<artifactId>metalib-model-jpa</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
