@@ -8,11 +8,11 @@ sap.ui.jsview("personslist-web.personslist", {
 		// Create an instance of the table control
 		
 		var oLayout = new sap.ui.commons.layout.MatrixLayout({
-			id : "matrix2",
+			id : "matrix",
 			layoutFixed : true,
 			columns : 1,
 			width : "100%",
-			widths : [ "20%", "80%" ]
+			widths : [ "100%" ]
 			});
 
 		var oLayoutHeader = new sap.ui.commons.layout.MatrixLayout({
@@ -21,6 +21,14 @@ sap.ui.jsview("personslist-web.personslist", {
 			columns : 3,
 			width : "100%",
 			widths : [ "20%","60%", "20%" ]
+			});		
+		
+		var oLayoutStatus = new sap.ui.commons.layout.MatrixLayout({
+			id : "matrix-status",
+			layoutFixed : true,
+			columns : 1,
+			width : "100%",
+			widths : [ "100%" ]
 			});
 
 		var oLayoutBody = new sap.ui.commons.layout.MatrixLayout({
@@ -40,19 +48,39 @@ sap.ui.jsview("personslist-web.personslist", {
 		oLayoutHeader.createRow( oText1, oText2,oText3 ); 
 
 		oLayout.createRow( oLayoutHeader ); 
+
+		var oTextStatus =new sap.ui.commons.TextView({text:"Status"});
+		
+		oLayoutStatus.createRow(oTextStatus);
+		
+		oLayout.createRow(oLayoutStatus);
 		
 		var oText =new sap.ui.commons.TextView({text:"Tree"});
 		
 		var oTable = new sap.ui.table.Table({
-			title : "Metalib-2013-08-02-17:49",
+			title : "Metalib-2013-08-03-08:57",
 			visibleRowCount : 7,
 			firstVisibleRow : 3,
 			selectionMode : sap.ui.table.SelectionMode.Single,
 		});
-		oLayoutBody.createRow( oText, oTable ); 
+		
+		var oLayoutReader = new sap.ui.commons.layout.MatrixLayout({
+			id : "matrix-reader",
+			layoutFixed : true,
+			columns : 3,
+			width : "100%",
+			widths : [ "100%" ]
+			});		
+		
+		var oTextCommand =new sap.ui.commons.TextView({text:"Command"});
+		var oTextReader =new sap.ui.commons.TextView({text:"Reader"});
+		oLayoutReader.createRow(oTextCommand);
+		oLayoutReader.createRow(oTextReader);
+		oLayoutReader.createRow(oTable);
+		
+		oLayoutBody.createRow( oText, oLayoutReader ); 
 
 		oLayout.createRow( oLayoutBody ); 
-		
 
 		// toolbar
 		var oTableToolbar = new sap.ui.commons.Toolbar();
