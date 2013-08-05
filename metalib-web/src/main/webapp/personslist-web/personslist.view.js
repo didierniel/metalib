@@ -7,6 +7,12 @@ sap.ui.jsview("personslist-web.personslist", {
 	createContent : function(oController) {
 		// Create an instance of the table control
 		
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-05-22:15"});
+
+		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
+
+		var oText3 =new sap.ui.commons.TextView({text:"Profile"});
+
 		var oLayout = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix",
 			layoutFixed : true,
@@ -36,14 +42,9 @@ sap.ui.jsview("personslist-web.personslist", {
 			layoutFixed : true,
 			columns : 2,
 			width : "100%",
-			widths : [ "20%","80%" ]
+			widths : [ "40%","60%" ]
 			});
 
-		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
-
-		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-05-16:15"});
-
-		var oText3 =new sap.ui.commons.TextView({text:"Profile"});
 		
 		oLayoutHeader.createRow( oText1, oText2,oText3 ); 
 
@@ -92,7 +93,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		// toolbar
 		var oTableToolbar = new sap.ui.commons.Toolbar();
 		// first name field
-		var oFirstNameLabel = new sap.ui.commons.Label({
+		var oCodeLabel = new sap.ui.commons.Label({
 			text : 'First Name'
 		});
 		var oFirstNameField = new sap.ui.commons.TextField({
@@ -100,8 +101,8 @@ sap.ui.jsview("personslist-web.personslist", {
 			value : '',
 			width : '10em',
 		});
-		oFirstNameLabel.setLabelFor(oFirstNameField);
-		oTableToolbar.addItem(oFirstNameLabel);
+		oCodeLabel.setLabelFor(oFirstNameField);
+		oTableToolbar.addItem(oCodeLabel);
 		oTableToolbar.addItem(oFirstNameField);
 		// last name field
 		var oLastNameLabel = new sap.ui.commons.Label({
@@ -148,6 +149,47 @@ sap.ui.jsview("personslist-web.personslist", {
 			filterProperty : "LastName",
 			width : "200px"
 		}));
+
+		
+		// toolbar
+		var oTableLibraryToolbar = new sap.ui.commons.Toolbar();
+		// first name field
+		var oCodeLabel = new sap.ui.commons.Label({
+			text : 'Code'
+		});
+		var oCodeField = new sap.ui.commons.TextField({
+			id : 'codeFieldId',
+			value : '',
+			width : '10em',
+		});
+		oCodeLabel.setLabelFor(oCodeField);
+		oTableLibraryToolbar.addItem(oCodeLabel);
+		oTableLibraryToolbar.addItem(oCodeField);
+		// last name field
+		var oTitleLabel = new sap.ui.commons.Label({
+			text : 'Title'
+		});
+		var oTitleField = new sap.ui.commons.TextField({
+			id : 'titleFieldId',
+			value : '',
+			width : '10em',
+		});
+		oTitleLabel.setLabelFor(oTitleField);
+		oTableLibraryToolbar.addItem(oTitleLabel);
+		oTableLibraryToolbar.addItem(oTitleField);
+		// add button
+		var oAddLibraryButton = new sap.ui.commons.Button({
+			id : 'addLibraryButtonId',
+			text : "Add Library",
+			press : function() {
+				oController.addNewLibrary(sap.ui.getCore().getControl(
+						"codeFieldId").getValue(), sap.ui.getCore()
+						.getControl("titleFieldId").getValue(), oTableLibrary);
+			}
+		});
+		oTableLibraryToolbar.addItem(oAddLibraryButton);
+		oTableLibrary.setToolbar(oTableLibraryToolbar);
+
 		oTableLibrary.addColumn(new sap.ui.table.Column({
 			label : new sap.ui.commons.Label({
 				text : "Code"
@@ -158,6 +200,17 @@ sap.ui.jsview("personslist-web.personslist", {
 			filterProperty : "Code",
 			width : "100px"
 		}));
+		oTableLibrary.addColumn(new sap.ui.table.Column({
+			label : new sap.ui.commons.Label({
+				text : "Title"
+			}),
+			template : new sap.ui.commons.TextField().bindProperty("value",
+					"Title"),
+			sortProperty : "Title",
+			filterProperty : "Title",
+			width : "100px"
+		}));
+		oTableLibrary.bindRows("/Librarys");
 
 		// bind table rows to /Persons based on the model defined in the init method of the controller
 		oTable.bindRows("/Persons");
