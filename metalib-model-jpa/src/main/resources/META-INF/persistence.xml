@@ -6,6 +6,7 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.sap.hana.cloud.sample.Person</class>
+		<class>com.sap.hana.cloud.sample.Library</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 		</properties>

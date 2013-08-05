@@ -58,7 +58,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oText =new sap.ui.commons.TextView({text:"Tree"});
 		
 		var oTable = new sap.ui.table.Table({
-			title : "Metalib-2013-08-03-08:57",
+			title : "Metalib-2013-08-05-16:15",
 			visibleRowCount : 7,
 			firstVisibleRow : 3,
 			selectionMode : sap.ui.table.SelectionMode.Single,
