@@ -26,6 +26,22 @@ sap.ui.controller("personslist-web.personslist", {
 	errorMsg : function() {
 		sap.ui.commons.MessageBox.alert("Error occured when creating person entity");
 	},
+	addNewLibrary : function(sCode, sTitle, oTable) {
+		var persons = {};
+
+		persons.FirstName = sCode;
+		persons.LastName = sTitle;
+
+		this.getView().getModel().create("/Persons", persons, null, this.successMsg, this.errorMsg);
+	},
+
+	successMsgLibrary : function() {
+		sap.ui.commons.MessageBox.alert("Person entity has been successfully created");
+	},
+
+	errorMsgLibrary : function() {
+		sap.ui.commons.MessageBox.alert("Error occured when creating person entity");
+	},
 /**
  * Similar to onAfterRendering, but this hook is invoked before the controller's
  * View is re-rendered (NOT before the first rendering! onInit() is used for

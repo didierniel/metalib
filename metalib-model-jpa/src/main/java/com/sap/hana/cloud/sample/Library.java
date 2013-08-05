@@ -14,6 +14,8 @@ public class Library {
 	private String code;
 	@Basic
 	private String title;
+	@Basic
+	private String description;
 
 	public long getId() {
 		return id;
@@ -37,6 +39,14 @@ public class Library {
 
 	public String getTitle() {
 		return title;
+	}
+
+	public void setDescription(String param) {
+		this.description = param;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 
 }
