@@ -41,7 +41,7 @@ sap.ui.jsview("personslist-web.personslist", {
 
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
-		var oText2 =new sap.ui.commons.TextView({text:"Title"});
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-05-16:15"});
 
 		var oText3 =new sap.ui.commons.TextView({text:"Profile"});
 		
@@ -58,7 +58,14 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oText =new sap.ui.commons.TextView({text:"Tree"});
 		
 		var oTable = new sap.ui.table.Table({
-			title : "Metalib-2013-08-05-16:15",
+			title : "Persons",
+			visibleRowCount : 7,
+			firstVisibleRow : 3,
+			selectionMode : sap.ui.table.SelectionMode.Single,
+		});		
+		
+		var oTableLibrary = new sap.ui.table.Table({
+			title : "Libraries",
 			visibleRowCount : 7,
 			firstVisibleRow : 3,
 			selectionMode : sap.ui.table.SelectionMode.Single,
@@ -78,7 +85,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		oLayoutReader.createRow(oTextReader);
 		oLayoutReader.createRow(oTable);
 		
-		oLayoutBody.createRow( oText, oLayoutReader ); 
+		oLayoutBody.createRow( oTableLibrary, oLayoutReader ); 
 
 		oLayout.createRow( oLayoutBody ); 
 
@@ -141,6 +148,17 @@ sap.ui.jsview("personslist-web.personslist", {
 			filterProperty : "LastName",
 			width : "200px"
 		}));
+		oTableLibrary.addColumn(new sap.ui.table.Column({
+			label : new sap.ui.commons.Label({
+				text : "Code"
+			}),
+			template : new sap.ui.commons.TextField().bindProperty("value",
+					"Code"),
+			sortProperty : "Code",
+			filterProperty : "Code",
+			width : "100px"
+		}));
+
 		// bind table rows to /Persons based on the model defined in the init method of the controller
 		oTable.bindRows("/Persons");
 		return oLayout;
