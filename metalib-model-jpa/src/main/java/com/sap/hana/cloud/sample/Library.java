@@ -3,8 +3,8 @@ package com.sap.hana.cloud.sample;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_PERSON")
-@NamedQuery(name = "AllPersons", query = "select p from Person p")
+@Table(name = "T_LIBRARY")
+@NamedQuery(name = "AllLibrary", query = "select p from Library p")
 public class Library {
 
 	@Id
