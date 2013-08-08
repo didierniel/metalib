@@ -7,7 +7,7 @@ sap.ui.jsview("personslist-web.personslist", {
 	createContent : function(oController) {
 		// Create an instance of the table control
 		
-		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-20:00"});
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-20:03"});
 
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
@@ -40,9 +40,9 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oLayoutBody = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix-body",
 			layoutFixed : true,
-			columns : 3,
+			columns : 2,
 			width : "100%",
-			widths : [ "10%","45%","45%" ]
+			widths : [ "20%","80%" ]
 			});
 
 		
@@ -72,6 +72,13 @@ sap.ui.jsview("personslist-web.personslist", {
 			selectionMode : sap.ui.table.SelectionMode.Single,
 		});
 		
+		var oTableBook = new sap.ui.table.Table({
+			title : "Books",
+			visibleRowCount : 7,
+			firstVisibleRow : 3,
+			selectionMode : sap.ui.table.SelectionMode.Single,
+		});
+		
 		var oTransTree = new sap.ui.commons.Tree("transTree");
 		
 		var oLayoutReader = new sap.ui.commons.layout.MatrixLayout({
@@ -87,8 +94,10 @@ sap.ui.jsview("personslist-web.personslist", {
 		oLayoutReader.createRow(oTextCommand);
 		oLayoutReader.createRow(oTextReader);
 		oLayoutReader.createRow(oTable);
+		oLayoutReader.createRow(oTableLibrary);
+		oLayoutReader.createRow(oTableBook);
 		
-		oLayoutBody.createRow(oTransTree, oTableLibrary, oLayoutReader ); 
+		oLayoutBody.createRow(oTransTree, oLayoutReader ); 
 
 		oLayout.createRow( oLayoutBody ); 
 
@@ -213,6 +222,72 @@ sap.ui.jsview("personslist-web.personslist", {
 			width : "100px"
 		}));
 		oTableLibrary.bindRows("/Librarys");
+		
+
+		
+		// toolbar
+		var oTableBookToolbar = new sap.ui.commons.Toolbar();
+		// first name field
+		var oBookCodeLabel = new sap.ui.commons.Label({
+			text : 'Code'
+		});
+		var oBookCodeField = new sap.ui.commons.TextField({
+			id : 'bookCodeFieldId',
+			value : '',
+			width : '10em',
+		});
+		oBookCodeLabel.setLabelFor(oBookCodeField);
+		oTableBookToolbar.addItem(oBookCodeLabel);
+		oTableBookToolbar.addItem(oBookCodeField);
+		// last name field
+		var oBookTitleLabel = new sap.ui.commons.Label({
+			text : 'Title'
+		});
+		var oBookTitleField = new sap.ui.commons.TextField({
+			id : 'bookTitleFieldId',
+			value : '',
+			width : '10em',
+		});
+		oBookTitleLabel.setLabelFor(oBookTitleField);
+		oTableBookToolbar.addItem(oBookTitleLabel);
+		oTableBookToolbar.addItem(oBookTitleField);
+		// add button
+		var oAddBookButton = new sap.ui.commons.Button({
+			id : 'addBookButtonId',
+			text : "Add Book",
+			press : function() {
+				oController.addNewBook(sap.ui.getCore().getControl(
+						"codeFieldId").getValue(), sap.ui.getCore()
+						.getControl("titleFieldId").getValue(), oTableBook);
+			}
+		});
+		oTableBookToolbar.addItem(oAddBookButton);
+		oTableBook.setToolbar(oTableBookToolbar);
+
+		oTableBook.addColumn(new sap.ui.table.Column({
+			label : new sap.ui.commons.Label({
+				text : "Code"
+			}),
+			template : new sap.ui.commons.TextField().bindProperty("value",
+					"Code"),
+			sortProperty : "Code",
+			filterProperty : "Code",
+			width : "100px"
+		}));
+		oTableBook.addColumn(new sap.ui.table.Column({
+			label : new sap.ui.commons.Label({
+				text : "Title"
+			}),
+			template : new sap.ui.commons.TextField().bindProperty("value",
+					"Title"),
+			sortProperty : "Title",
+			filterProperty : "Title",
+			width : "100px"
+		}));
+		oTableBook.bindRows("/Books");
+		
+		
+		
 		
 		oTransTree.setShowHeader(false);
 		oTransTree.setTitle("Explorer");

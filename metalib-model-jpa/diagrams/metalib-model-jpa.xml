@@ -11,10 +11,10 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.sap.hana.cloud.sample.Library</entity-name>
+		<entity-name>com.sap.hana.cloud.sample.Book</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>148</entity-height>
-		<entity-X-Coordinate>200</entity-X-Coordinate>
+		<entity-height>186</entity-height>
+		<entity-X-Coordinate>407</entity-X-Coordinate>
 		<entity-Y-Coordinate>150</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
@@ -22,11 +22,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.sap.hana.cloud.sample.Book</entity-name>
+		<entity-name>com.sap.hana.cloud.sample.Library</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
-		<entity-X-Coordinate>370</entity-X-Coordinate>
-		<entity-Y-Coordinate>160</entity-Y-Coordinate>
+		<entity-height>186</entity-height>
+		<entity-X-Coordinate>200</entity-X-Coordinate>
+		<entity-Y-Coordinate>150</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

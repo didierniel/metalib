@@ -26,6 +26,7 @@ sap.ui.controller("personslist-web.personslist", {
 	errorMsg : function() {
 		sap.ui.commons.MessageBox.alert("Error occured when creating person entity");
 	},
+
 	addNewLibrary : function(sCode, sTitle, oTableLibrary) {
 		var libraries = {};
 
@@ -41,6 +42,23 @@ sap.ui.controller("personslist-web.personslist", {
 
 	errorMsgLibrary : function() {
 		sap.ui.commons.MessageBox.alert("Error occured when creating library entity");
+	},
+	
+	addNewBook : function(sCode, sTitle, oTableBook) {
+		var libraries = {};
+
+		libraries.Code = sCode;
+		libraries.Title = sTitle;
+
+		this.getView().getModel().create("/Books", libraries, null, this.successMsgBook, this.errorMsgBook);
+	},
+
+	successMsgBook : function() {
+		sap.ui.commons.MessageBox.alert("Book entity has been successfully created");
+	},
+
+	errorMsgBook : function() {
+		sap.ui.commons.MessageBox.alert("Error occured when creating Book entity");
 	},
 /**
  * Similar to onAfterRendering, but this hook is invoked before the controller's

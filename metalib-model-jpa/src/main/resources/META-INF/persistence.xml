@@ -7,6 +7,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.sap.hana.cloud.sample.Person</class>
 		<class>com.sap.hana.cloud.sample.Library</class>
+		<class>com.sap.hana.cloud.sample.Book</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 <!-- 			drop-and- -->
