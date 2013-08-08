@@ -7,7 +7,7 @@ sap.ui.jsview("personslist-web.personslist", {
 	createContent : function(oController) {
 		// Create an instance of the table control
 		
-		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-16:00"});
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-20:00"});
 
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
@@ -42,7 +42,7 @@ sap.ui.jsview("personslist-web.personslist", {
 			layoutFixed : true,
 			columns : 3,
 			width : "100%",
-			widths : [ "30%","30%","40%" ]
+			widths : [ "10%","45%","45%" ]
 			});
 
 		
@@ -77,7 +77,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oLayoutReader = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix-reader",
 			layoutFixed : true,
-			columns : 3,
+			columns : 1,
 			width : "100%",
 			widths : [ "100%" ]
 			});		

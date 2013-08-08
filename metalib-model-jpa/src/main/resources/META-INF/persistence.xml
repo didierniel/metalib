@@ -9,6 +9,7 @@
 		<class>com.sap.hana.cloud.sample.Library</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />
+<!-- 			drop-and- -->
 <!-- 			http://wiki.eclipse.org/EclipseLink/Examples/JPA/DDL -->
 		</properties>
 	</persistence-unit>
