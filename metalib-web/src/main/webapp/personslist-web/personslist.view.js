@@ -7,7 +7,7 @@ sap.ui.jsview("personslist-web.personslist", {
 	createContent : function(oController) {
 		// Create an instance of the table control
 		
-		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-06-13:30"});
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-16:00"});
 
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
@@ -40,9 +40,9 @@ sap.ui.jsview("personslist-web.personslist", {
 		var oLayoutBody = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix-body",
 			layoutFixed : true,
-			columns : 2,
+			columns : 3,
 			width : "100%",
-			widths : [ "40%","60%" ]
+			widths : [ "30%","30%","40%" ]
 			});
 
 		
@@ -72,6 +72,8 @@ sap.ui.jsview("personslist-web.personslist", {
 			selectionMode : sap.ui.table.SelectionMode.Single,
 		});
 		
+		var oTransTree = new sap.ui.commons.Tree("transTree");
+		
 		var oLayoutReader = new sap.ui.commons.layout.MatrixLayout({
 			id : "matrix-reader",
 			layoutFixed : true,
@@ -86,7 +88,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		oLayoutReader.createRow(oTextReader);
 		oLayoutReader.createRow(oTable);
 		
-		oLayoutBody.createRow( oTableLibrary, oLayoutReader ); 
+		oLayoutBody.createRow(oTransTree, oTableLibrary, oLayoutReader ); 
 
 		oLayout.createRow( oLayoutBody ); 
 
@@ -211,6 +213,35 @@ sap.ui.jsview("personslist-web.personslist", {
 			width : "100px"
 		}));
 		oTableLibrary.bindRows("/Librarys");
+		
+		oTransTree.setShowHeader(false);
+		oTransTree.setTitle("Explorer");
+		oTransTree.setWidth("100%");
+		oTransTree.setHeight("auto");
+		oTransTree.setShowHeaderIcons(true);
+		oTransTree.setShowHorizontalScrollbar(false);
+
+		//create Tree Nodes
+		var oTransNode1 = new sap.ui.commons.TreeNode("transNode1", {text:"Computer", icon:"images/system.gif", expanded: true});
+		var oTransNode2 = new sap.ui.commons.TreeNode("transNode2", {text:"OSDisk (C:)", icon:"images/disk.gif", expanded: true});
+		var oTransNode3 = new sap.ui.commons.TreeNode("transNode3", {text:"Program Files", icon:"images/folder.gif"});
+		var oTransNode4 = new sap.ui.commons.TreeNode("transNode4", {text:"Windows", icon:"images/folder.gif"});
+		var oTransNode5 = new sap.ui.commons.TreeNode("transNode5", {text:"Mass Storage (USB)", icon:"images/disk.gif"});
+		var oTransNode6 = new sap.ui.commons.TreeNode("transNode6", {text:"Network", icon:"images/network.gif"});
+
+		oTransNode1.addNode(oTransNode2);
+		oTransNode1.addNode(oTransNode5);
+
+		oTransNode2.addNode(oTransNode3);
+		oTransNode2.addNode(oTransNode4);
+		
+		
+
+		//add Tree Node root to the Tree
+		oTransTree.addNode(oTransNode1);
+		//oTransNode1.bindProperty("text", "@title"); 
+		//oTransTree.bindNodes("/Librarys",oTransNode1);
+		oTransTree.addNode(oTransNode6);
 
 		// bind table rows to /Persons based on the model defined in the init method of the controller
 		oTable.bindRows("/Persons");
