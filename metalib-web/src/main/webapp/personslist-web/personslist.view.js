@@ -7,7 +7,7 @@ sap.ui.jsview("personslist-web.personslist", {
 	createContent : function(oController) {
 		// Create an instance of the table control
 		
-		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-08-20:03"});
+		var oText2 =new sap.ui.commons.TextView({text:"Metalib-2013-08-09-10:03"});
 
 		var oText1 =new sap.ui.commons.TextView({text:"Logo"});
 
@@ -236,6 +236,8 @@ sap.ui.jsview("personslist-web.personslist", {
 			value : '',
 			width : '10em',
 		});
+		
+		
 		oBookCodeLabel.setLabelFor(oBookCodeField);
 		oTableBookToolbar.addItem(oBookCodeLabel);
 		oTableBookToolbar.addItem(oBookCodeField);
@@ -245,12 +247,55 @@ sap.ui.jsview("personslist-web.personslist", {
 		});
 		var oBookTitleField = new sap.ui.commons.TextField({
 			id : 'bookTitleFieldId',
-			value : '',
+			value : 'MyBlankTitle',
+//			value : '{/Librarys(1)/Title}',
 			width : '10em',
 		});
 		oBookTitleLabel.setLabelFor(oBookTitleField);
 		oTableBookToolbar.addItem(oBookTitleLabel);
 		oTableBookToolbar.addItem(oBookTitleField);
+
+
+		
+		var oBookLinkLabel = new sap.ui.commons.Label({
+			text : 'Library'
+		});
+		
+		// Create a ComboBox
+		var oLibraryLinkComboBox = new sap.ui.commons.ComboBox("LibraryLink");
+		oLibraryLinkComboBox.setTooltip("Country");
+		oLibraryLinkComboBox.setEditable(true);
+		oLibraryLinkComboBox.setValue("Deutschland");
+		oLibraryLinkComboBox.setWidth("200px");
+		var oItem = new sap.ui.core.ListItem("Country1");
+		oItem.setText("Canada");
+		oLibraryLinkComboBox.addItem(oItem);
+		oItem = new sap.ui.core.ListItem("Country2");
+		oItem.setText("Deutschland");
+		oLibraryLinkComboBox.addItem(oItem);
+		oItem = new sap.ui.core.ListItem("Country3");
+		oItem.setText("England");
+		oLibraryLinkComboBox.addItem(oItem);
+		oItem = new sap.ui.core.ListItem("Country4");
+		oItem.setText("Россия");
+		oLibraryLinkComboBox.addItem(oItem);
+		
+		//oLibraryLinkComboBox.setModel(this.getModel());
+		//this.displayLibraryLinkComboBox(oLibraryLinkComboBox);
+
+//		var oLibraryLinkTemplate = new sap.ui.core.ListItem();
+//		oItemTemplate1.bindProperty("id", "id");
+//		oLibraryLinkTemplate.bindProperty("text", "Title");
+//		oItemTemplate1.bindProperty("tooltip", "description");
+//		oComboBox3.bindItems("/Librarys", oLibraryLinkTemplate);
+		
+		oTableBookToolbar.addItem(oBookLinkLabel);
+		oTableBookToolbar.addItem(oLibraryLinkComboBox);
+		
+//		var oTextField = new sap.ui.commons.TextField({
+//		    value: "{/company/name}"
+
+		
 		// add button
 		var oAddBookButton = new sap.ui.commons.Button({
 			id : 'addBookButtonId',
@@ -310,7 +355,6 @@ sap.ui.jsview("personslist-web.personslist", {
 		oTransNode2.addNode(oTransNode3);
 		oTransNode2.addNode(oTransNode4);
 		
-		
 
 		//add Tree Node root to the Tree
 		oTransTree.addNode(oTransNode1);
@@ -321,5 +365,11 @@ sap.ui.jsview("personslist-web.personslist", {
 		// bind table rows to /Persons based on the model defined in the init method of the controller
 		oTable.bindRows("/Persons");
 		return oLayout;
+	},
+	
+	displayLibraryLinkComboBox:function( theLibraryLinkComboBox){
+		
+		return theLibraryLinkComboBox;
 	}
+	
 });

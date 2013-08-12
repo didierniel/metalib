@@ -11,7 +11,7 @@ public class Library {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	@Basic
 	private String code;
 	@Basic
@@ -19,13 +19,13 @@ public class Library {
 	@Basic
 	private String description;
 	@OneToMany(mappedBy = "library")
-	private Collection<Book> book;
+	private Collection<Book> books;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -53,12 +53,12 @@ public class Library {
 		return description;
 	}
 
-	public Collection<Book> getBook() {
-	    return book;
+	public Collection<Book> getBooks() {
+	    return books;
 	}
 
-	public void setBook(Collection<Book> param) {
-	    this.book = param;
+	public void setBooks(Collection<Book> param) {
+	    this.books = param;
 	}
 
 }

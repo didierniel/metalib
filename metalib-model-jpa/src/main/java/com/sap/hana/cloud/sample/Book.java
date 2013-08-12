@@ -5,10 +5,11 @@ import com.sap.hana.cloud.sample.Library;
 
 @Entity
 @Table(name = "T_BOOK")
+@NamedQuery(name = "AllBooks", query = "select b from Book b")
 public class Book {
 
 	@Id
-	private long id;
+	private int id;
 	@Basic
 	private String code;
 	@Basic
@@ -18,11 +19,11 @@ public class Book {
 	@ManyToOne
 	private Library library;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

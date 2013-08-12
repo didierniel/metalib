@@ -9,17 +9,17 @@ public class Person {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	@Basic
 	private String firstName;
 	@Basic
 	private String lastName;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
