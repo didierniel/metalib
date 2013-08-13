@@ -45,12 +45,12 @@ sap.ui.controller("personslist-web.personslist", {
 	},
 	
 	addNewBook : function(sCode, sTitle, oTableBook) {
-		var libraries = {};
+		var books = {};
 
-		libraries.Code = sCode;
-		libraries.Title = sTitle;
+		books.Code = sCode;
+		books.Title = sTitle;
 
-		this.getView().getModel().create("/Books", libraries, null, this.successMsgBook, this.errorMsgBook);
+		this.getView().getModel().create("/Books", books, null, this.successMsgBook, this.errorMsgBook);
 	},
 
 	successMsgBook : function() {

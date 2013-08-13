@@ -302,8 +302,8 @@ sap.ui.jsview("personslist-web.personslist", {
 			text : "Add Book",
 			press : function() {
 				oController.addNewBook(sap.ui.getCore().getControl(
-						"codeFieldId").getValue(), sap.ui.getCore()
-						.getControl("titleFieldId").getValue(), oTableBook);
+						"bookCodeFieldId").getValue(), sap.ui.getCore()
+						.getControl("bookTitleFieldId").getValue(), oTableBook);
 			}
 		});
 		oTableBookToolbar.addItem(oAddBookButton);

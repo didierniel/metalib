@@ -1,8 +1,11 @@
 package com.sap.hana.cloud.sample;
 
-import javax.persistence.*;
-import com.sap.hana.cloud.sample.Book;
-import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_LIBRARY")
@@ -18,9 +21,6 @@ public class Library {
 	private String title;
 	@Basic
 	private String description;
-	@OneToMany(mappedBy = "library")
-	private Collection<Book> books;
-
 	public int getId() {
 		return id;
 	}
@@ -51,14 +51,6 @@ public class Library {
 
 	public String getDescription() {
 		return description;
-	}
-
-	public Collection<Book> getBooks() {
-	    return books;
-	}
-
-	public void setBooks(Collection<Book> param) {
-	    this.books = param;
 	}
 
 }
