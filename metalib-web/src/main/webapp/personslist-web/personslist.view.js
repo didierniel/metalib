@@ -292,6 +292,30 @@ sap.ui.jsview("personslist-web.personslist", {
 		oTableBookToolbar.addItem(oBookLinkLabel);
 		oTableBookToolbar.addItem(oLibraryLinkComboBox);
 		
+		var oModel = new sap.ui.model.json.JSONModel();
+		oModel.setData({
+		        Librarys:[
+		                {Title:"PC"},
+		                {Title:"Monitor"},
+		                {Title:"Keyboard"},
+		                {Title:"Mouse"},
+		                {Title:"Speaker"},
+		                {Title:"Printer"}],
+		        editable: true, 
+		        tooltip: "Title"});
+		//sap.ui.getCore().setModel(oModel);
+
+		var oComboBox3 = new sap.ui.commons.ComboBox("ComboBox3");
+		
+		oComboBox3.setModel(sap.ui.getCore().getModel());
+		var oItemTemplate1 = new sap.ui.core.ListItem();
+		oItemTemplate1.bindProperty("text", "Title");
+		oComboBox3.bindItems("/Librarys", oItemTemplate1);
+
+		// Attach the ComboBox to the page
+		oTableBookToolbar.addItem(oComboBox3);
+		
+		
 //		var oTextField = new sap.ui.commons.TextField({
 //		    value: "{/company/name}"
 
