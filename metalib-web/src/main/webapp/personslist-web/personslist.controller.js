@@ -49,6 +49,7 @@ sap.ui.controller("personslist-web.personslist", {
 
 		books.Code = sCode;
 		books.Title = sTitle;
+		//books.Library=sLibraryLinkId;
 
 		this.getView().getModel().create("/Books", books, null, this.successMsgBook, this.errorMsgBook);
 	},

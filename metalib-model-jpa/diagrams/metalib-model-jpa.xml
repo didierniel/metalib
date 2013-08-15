@@ -13,7 +13,7 @@
 	<entity>
 		<entity-name>com.sap.hana.cloud.sample.Book</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>148</entity-height>
+		<entity-height>186</entity-height>
 		<entity-X-Coordinate>387</entity-X-Coordinate>
 		<entity-Y-Coordinate>10</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -24,7 +24,7 @@
 	<entity>
 		<entity-name>com.sap.hana.cloud.sample.Library</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>148</entity-height>
+		<entity-height>186</entity-height>
 		<entity-X-Coordinate>180</entity-X-Coordinate>
 		<entity-Y-Coordinate>10</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>

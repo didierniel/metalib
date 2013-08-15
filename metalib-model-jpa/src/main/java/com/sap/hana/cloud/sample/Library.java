@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import com.sap.hana.cloud.sample.Book;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "T_LIBRARY")
@@ -21,6 +24,8 @@ public class Library {
 	private String title;
 	@Basic
 	private String description;
+	@OneToMany(mappedBy = "library")
+	private Collection<Book> book;
 	public int getId() {
 		return id;
 	}
@@ -51,6 +56,14 @@ public class Library {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public Collection<Book> getBook() {
+	    return book;
+	}
+
+	public void setBook(Collection<Book> param) {
+	    this.book = param;
 	}
 
 }

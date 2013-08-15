@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import com.sap.hana.cloud.sample.Library;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Table(name = "T_BOOK")
@@ -21,6 +23,8 @@ public class Book {
 	private String title;
 	@Basic
 	private String description;
+	@ManyToOne
+	private Library library;
 	public int getId() {
 		return id;
 	}
@@ -51,6 +55,14 @@ public class Book {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public Library getLibrary() {
+	    return library;
+	}
+
+	public void setLibrary(Library param) {
+	    this.library = param;
 	}
 
 }
