@@ -4,6 +4,8 @@ sap.ui.controller("personslist-web.personslist", {
 		var sOrigin = window.location.protocol + "//" + window.location.hostname
 				+ (window.location.port ? ":" + window.location.port : "");
 		var personsListOdataServiceUrl = sOrigin + "/metalib-web/personslist.svc";
+		
+		
 
 		var odataModel = new sap.ui.model.odata.ODataModel(
 				personsListOdataServiceUrl);
@@ -49,7 +51,8 @@ sap.ui.controller("personslist-web.personslist", {
 
 		books.Code = sCode;
 		books.Title = sTitle;
-		//books.Library=sLibraryLinkId;
+		//books.Library_id=1;
+		
 
 		this.getView().getModel().create("/Books", books, null, this.successMsgBook, this.errorMsgBook);
 	},
@@ -60,6 +63,20 @@ sap.ui.controller("personslist-web.personslist", {
 
 	errorMsgBook : function() {
 		sap.ui.commons.MessageBox.alert("Error occured when creating Book entity");
+	},
+
+	updateBook : function(oTableBook) {
+		var books = {};
+		books.Id=52;
+		this.getView().getModel().update("/Books(101)/LibraryDetails", books, null, this.successUpdateMsgBook, this.errorUpdateMsgBook);
+	},
+
+	successUpdateMsgBook : function() {
+		sap.ui.commons.MessageBox.alert("Book entity has been successfully updated");
+	},
+
+	errorUpdateMsgBook : function() {
+		sap.ui.commons.MessageBox.alert("Error occured when updating Book entity");
 	},
 /**
  * Similar to onAfterRendering, but this hook is invoked before the controller's

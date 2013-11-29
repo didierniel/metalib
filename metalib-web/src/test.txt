@@ -1,0 +1,41 @@
+{
+    "Timestamp": "2013-10-23T11:33:05.306Z",
+    "HistoryItemType": "Action",
+    "AlarmName": "alert",
+    "HistoryData": {
+        "actionState": "Succeeded",
+        "notificationResource": "arn:aws:sns:us-east-1:945397036271:NotifyMe",
+        "stateUpdateTimestamp": "2013-10-23T11:33:05.290+0000",
+        "publishedMessage": {
+            "default": {
+                "AlarmName": "alert",
+                "AlarmDescription": null,
+                "AWSAccountId": "945397036271",
+                "NewStateValue": "ALARM",
+                "NewStateReason": "Threshold Crossed: 1 datapoint (1.0) was greater than or equal to the threshold (1.0).",
+                "StateChangeTime": "2013-10-23T11:33:05.290+0000",
+                "Region": "US - N. Virginia",
+                "OldStateValue": "INSUFFICIENT_DATA",
+                "Trigger": {
+                    "MetricName": "EstimatedCharges",
+                    "Namespace": "AWS/Billing",
+                    "Statistic": "SAMPLE_COUNT",
+                    "Unit": null,
+                    "Dimensions": [
+                        {
+                            "name": "Currency",
+                            "value": "USD"
+                        }
+                    ],
+                    "Period": 3600,
+                    "EvaluationPeriods": 1,
+                    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "Threshold": 1
+                }
+            },
+            "sms": "ALARM: \"alert\" (>= 1.0)",
+            "email": "You are receiving this email because your  estimated charges are greater than the limit you set for the alarm \"alert\" in AWS Account 945397036271.\n\nThe alarm limit you set was $ 1.00 USD. Your total estimated charges accrued for this billing period are currently $ 1.00 USD as of Wednesday 23 October, 2013 11:33:05 UTC. The actual charges you will be billed in this statement period may differ from the charges shown on this notification. For more information, view your estimated bill at http://aws.amazon.com/account.\n\nMore details about this alarm are provided below:\n\n\n---\n\nAmazon CloudWatch Alarm \"alert\" in the US - N. Virginia region has entered the ALARM state, because \"Threshold Crossed: 1 datapoint (1.0) was greater than or equal to the threshold (1.0).\" at \"Wednesday 23 October, 2013 11:33:05 UTC\".\n\nView this alarm in the AWS Management Console:\nhttps://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=alert\n\nAlarm Details:\n- Name:                       alert\n- Description:                \n- State Change:               INSUFFICIENT_DATA -> ALARM\n- Reason for State Change:    Threshold Crossed: 1 datapoint (1.0) was greater than or equal to the threshold (1.0).\n- Timestamp:                  Wednesday 23 October, 2013 11:33:05 UTC\n- AWS Account:                945397036271\n\nThreshold:\n- The alarm is in the ALARM state when the metric is GreaterThanOrEqualToThreshold 1.00 for 3600 seconds. \n\nMonitored Metric:\n- MetricNamespace:            AWS/Billing\n- MetricName:                 EstimatedCharges\n- Dimensions:                 [Currency = USD]\n- Period:                     3600 seconds\n- Statistic:                  SampleCount\n- Unit:                       not specified\n\nState Change Actions:\n- OK: \n- ALARM: [arn:aws:sns:us-east-1:945397036271:NotifyMe]\n- INSUFFICIENT_DATA: \n"
+        }
+    },
+    "HistorySummary": "Successfully executed action arn:aws:sns:us-east-1:945397036271:NotifyMe"
+}

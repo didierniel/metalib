@@ -32,7 +32,7 @@
 	</context-param>
 	<!-- Enable usage of Cloud persistence service -->
 	<resource-ref>
-	    <res-ref-name>jdbc/DefaultDB</res-ref-name>
+	    <res-ref-name>jdbc/MetalibDB</res-ref-name>
 	    <res-type>javax.sql.DataSource</res-type>
 	</resource-ref>
   

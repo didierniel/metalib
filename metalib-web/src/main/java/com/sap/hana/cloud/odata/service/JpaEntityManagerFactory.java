@@ -14,7 +14,7 @@ import org.eclipse.persistence.config.PersistenceUnitProperties;
  * Handles the singleton EntityManagerFactory instance.
  */
 public class JpaEntityManagerFactory {
-	public static final String DATA_SOURCE_NAME = "java:comp/env/jdbc/DefaultDB";
+	public static final String DATA_SOURCE_NAME = "java:comp/env/jdbc/MetalibDB";
 	public static final String PERSISTENCE_UNIT_NAME = "metalib-model-jpa";
 	private static EntityManagerFactory entityManagerFactory = null;
 

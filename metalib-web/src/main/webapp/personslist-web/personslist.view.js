@@ -8,7 +8,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		// Create an instance of the table control
 
 		var oText2 = new sap.ui.commons.TextView({
-			text : "Metalib-2013-08-09-10:03"
+			text : "Metalib-2013-08-20-14:44"
 		});
 
 		var oText1 = new sap.ui.commons.TextView({
@@ -281,6 +281,7 @@ sap.ui.jsview("personslist-web.personslist", {
 			press : function() {
 				oController.addNewBook(sap.ui.getCore().getControl("bookCodeFieldId").getValue(), sap.ui.getCore().getControl("bookTitleFieldId").getValue(),
 						oTableBook);
+				oController.updateBook(oTableBook);
 			}
 		});
 		oTableBookToolbar.addItem(oAddBookButton);

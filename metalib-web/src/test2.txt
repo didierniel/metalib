@@ -1,0 +1,41 @@
+{
+    "Timestamp": "2013-10-23T23:25:15.237Z",
+    "HistoryItemType": "ConfigurationUpdate",
+    "AlarmName": "alert",
+    "HistoryData": {
+        "version": "1.0",
+        "type": "Update",
+        "updatedAlarm": {
+            "namespace": "AWS/Billing",
+            "insufficientDataActions": [],
+            "okactions": [],
+            "alarmActions": [
+                "arn:aws:sns:us-east-1:945397036271:NotifyMe"
+            ],
+            "actionsEnabled": true,
+            "evaluationPeriods": 1,
+            "comparisonOperator": "GreaterThanOrEqualToThreshold",
+            "metricName": "EstimatedCharges",
+            "period": 3600,
+            "dimensions": [
+                {
+                    "name": "Currency",
+                    "value": "USD"
+                }
+            ],
+            "stateValue": "INSUFFICIENT_DATA",
+            "stateUpdatedTimestamp": "2013-10-23T22:34:05.267+0000",
+            "alarmArn": "arn:aws:cloudwatch:us-east-1:945397036271:alarm:alert",
+            "alarmConfigurationUpdatedTimestamp": "2013-10-23T23:25:15.237+0000",
+            "alarmName": "alert",
+            "alarmDescription": "",
+            "statistic": "SampleCount",
+            "threshold": 1.5
+        },
+        "originalUpdatedFields": {
+            "alarmConfigurationUpdatedTimestamp": "2013-10-22T06:08:13.261+0000",
+            "threshold": 1
+        }
+    },
+    "HistorySummary": "Alarm \"alert\" updated"
+}
