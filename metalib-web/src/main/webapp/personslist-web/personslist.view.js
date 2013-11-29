@@ -8,7 +8,7 @@ sap.ui.jsview("personslist-web.personslist", {
 		// Create an instance of the table control
 
 		var oText2 = new sap.ui.commons.TextView({
-			text : "Metalib-2013-08-20-14:44"
+			text : "Metalib-2013-11-29-14:44"
 		});
 
 		var oText1 = new sap.ui.commons.TextView({
