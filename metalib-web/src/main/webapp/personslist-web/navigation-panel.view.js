@@ -13,7 +13,12 @@ sap.ui.jsview("personlist-web.navigation-panel", {
 	* @memberOf personlist-web.navigation-panel
 	*/ 
 	createContent : function(oController) {
+		
+		var oText2 = new sap.ui.commons.TextView({
+			text : "NavigationPanel-2013-11-29-14:44"
+		});
 
+		return oText2;
 	}
 
 });

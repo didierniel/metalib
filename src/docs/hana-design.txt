@@ -1,0 +1,35 @@
+
+DDL
+
+T_PERSON
+	EMAIL
+	FIRST_NAME
+	LAST_NAME
+
+T_LIBRARY
+	ID
+	CODE
+	TITLE
+	PERSON_ID (OnetoOne)
+
+T_BOOK
+	ID
+	NAME
+	LIBRARY_ID (ManytoOne)
+	Person_ID (ManytoOne)
+	TITLE
+	
+T_PAGE
+	ID
+	NUMBER
+	BOOK_ID (ManytoOne)
+
+T_TEXT_BLOCK
+	ID
+	TEXT
+	PAGE_ID
+
+
+
+
+	
